@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Second_flr"
+    android:background="#060708">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/flr2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="30dp">
+        <Button
+            android:id="@+id/back2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="BACK"
+            android:background="@drawable/history_btn"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            android:drawableLeft="@drawable/return_vector"
+            android:drawablePadding="8dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@id/grid">
+
+            <TextView
+                android:id="@+id/floor_2nd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2nd Floor"
+                android:textSize="48dp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:id="@+id/next_2nd"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/next_img"
+                android:layout_toRightOf="@+id/floor_2nd"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:columnCount="3"
+            android:rowCount="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintWidth_percent="0.9">
+
+
+            <ToggleButton
+                android:id="@+id/room201"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:background="@drawable/floor_btn"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@drawable/floor_font"
+                android:textOff="201"
+                android:textOn="201"
+                android:textSize="48sp"
+                android:onClick="onToggleButtonClicked"/>
+
+            <ToggleButton
+                android:id="@+id/room202"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/floor_btn"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@drawable/floor_font"
+                android:textOff="202"
+                android:textOn="202"
+                android:textSize="48dp"
+                android:onClick="onToggleButtonClicked"/>
+
+            <ToggleButton
+                android:id="@+id/room203"
+                android:layout_margin="20dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/floor_btn"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@drawable/floor_font"
+                android:textOff="203"
+                android:textOn="203"
+                android:textSize="48dp"
+                android:onClick="onToggleButtonClicked"/>
+
+            <ToggleButton
+                android:id="@+id/room204"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/floor_btn"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@drawable/floor_font"
+                android:textOff="204"
+                android:textOn="204"
+                android:textSize="48dp"
+                android:onClick="onToggleButtonClicked"/>
+
+            <ToggleButton
+                android:id="@+id/room205"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/floor_btn"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@drawable/floor_font"
+                android:textOff="205"
+                android:textOn="205"
+                android:textSize="48dp"
+                android:onClick="onToggleButtonClicked"/>
+        </GridLayout>
+
+        <Button
+            android:id="@+id/confirm_btn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/scan_btn"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Confirm"
+            android:textColor="#FFFFFF"
+            android:textSize="36dp"
+            app:layout_constraintTop_toBottomOf="@id/grid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintHeight_percent="0.093"
+            app:layout_constraintWidth_percent="0.4"
+            android:enabled="false"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

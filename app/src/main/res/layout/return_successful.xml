@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/return_successful_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#060708">
+
+
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="260dp"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/successful_icon">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="224dp"
+            android:background="@drawable/successful"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Returned Successfully!"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="#FFFFFF"
+                android:textSize="48dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/successful_icon"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

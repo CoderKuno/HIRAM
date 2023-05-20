@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Borrow_return"
+    android:background="#060708"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/intersect"
+        android:layout_alignParentBottom="true"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="30dp">
+
+        <Button
+            android:id="@+id/hist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/history_btn"
+            android:drawableLeft="@drawable/baseline_history_24"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingLeft="9dp"
+            android:paddingRight="14dp"
+            android:text="HISTORY"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/borrow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/scan_btn"
+            android:fontFamily="@font/poppins_medium"
+            android:text="BORROW"
+            android:textColor="#FFFFFF"
+            android:textSize="36dp"
+            app:layout_constraintBottom_toTopOf="@id/return_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/verticalGuideline"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.37" />
+
+        <Button
+            android:id="@+id/return_"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/return_btn"
+            android:fontFamily="@font/poppins_medium"
+            android:text="RETURN"
+            android:textColor="#060708"
+            android:textSize="36dp"
+            app:layout_constraintBottom_toTopOf="@id/verticalGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/borrow"
+            app:layout_constraintWidth_percent="0.37"
+            android:enabled="false"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/usep_logo" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cic_logo" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

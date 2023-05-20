@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "243656291374",
+    "firebase_url": "https://hiram-47c23-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "hiram-47c23",
+    "storage_bucket": "hiram-47c23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243656291374:android:8e0a075554574732b81bbf",
+        "android_client_info": {
+          "package_name": "com.example.hiram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243656291374-a9q1rs4314bhar4jjtags8spsukh15nb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVtlK9sj9TgyGT1nFPtz9UH6wZRt_8s5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243656291374-a9q1rs4314bhar4jjtags8spsukh15nb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#060708"
+    android:padding="30dp"
+    tools:context=".RoomHistory">
+
+    <Button
+        android:id="@+id/back_hist"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/history_btn"
+        android:drawableLeft="@drawable/return_vector"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="13dp"
+        android:paddingRight="15dp"
+        android:text="BACK"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/room_hist"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/history_btn"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="ALL"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/table"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.73"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintWidth_percent="0.93">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_bg"
+                android:stretchColumns="0,1,2,3,4">
+
+                <!-- Header row -->
+                <TableRow>
+                    <!-- Header cells -->
+                    <TextView
+                        android:layout_column="0"
+                        android:padding="20dp"
+                        android:textSize="22dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="User ID"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_column="1"
+                        android:padding="20dp"
+                        android:textSize="22dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Username"
+                        android:textColor="#FFFFFF" />
+                    <TextView
+                        android:layout_column="2"
+                        android:padding="20dp"
+                        android:textSize="22dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="DT borrowed"
+                        android:textColor="#FFFFFF" />
+                    <TextView
+                        android:layout_column="3"
+                        android:padding="20dp"
+                        android:textSize="22dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="DT returned"
+                        android:textColor="#FFFFFF" />
+                    <TextView
+                        android:layout_column="4"
+                        android:padding="20dp"
+                        android:textSize="22dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Status"
+                        android:textColor="#FFFFFF" />
+                    <!-- Add more header cells here -->
+                </TableRow>
+
+            </TableLayout>
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/roomNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="54sp"
+        app:layout_constraintBottom_toTopOf="@id/table"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
