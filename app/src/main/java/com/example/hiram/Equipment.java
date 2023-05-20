@@ -122,11 +122,25 @@ public class Equipment extends AppCompatActivity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         // Format the current date and time as per the desired format
         String formattedDateTime = dateFormat.format(currentDate);
+        boolean acRemote= false;
+        boolean tvRemote= false;
+        boolean roomKey= false;
+        for (String item: array) {
+            if (item.equals("acRemote")) acRemote= true;
+            else if (item.equals("tvRemote")) tvRemote= true;
+            else roomKey=true;
+        }
 
+        boolean finalAcRemote = acRemote;
+        boolean finalTvRemote = tvRemote;
+        boolean finalRoomKey = roomKey;
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String username= snapshot.child("username").getValue().toString();
+                newTransactionRef.child("acRemote").setValue(finalAcRemote);
+                newTransactionRef.child("tvRemote").setValue(finalTvRemote);
+                newTransactionRef.child("roomKey").setValue(finalRoomKey);
                 newTransactionRef.child("username").setValue(username);
                 newTransactionRef.child("user").setValue(trans.getQr());
                 newTransactionRef.child("roomNo").setValue(trans.getRoom());

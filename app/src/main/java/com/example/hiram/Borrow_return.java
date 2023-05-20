@@ -28,7 +28,7 @@ import java.util.Date;
 
 public class Borrow_return extends AppCompatActivity {
 
-    private Button borrow, return_;
+    private Button borrow, return_, hist;
     private Transaction trans= new Transaction();
     private ArrayList<String> transactionKeys= new ArrayList<>();
     private ArrayList<String> rooms= new ArrayList<>();
@@ -40,6 +40,15 @@ public class Borrow_return extends AppCompatActivity {
 
         borrow= findViewById(R.id.borrow);
         return_= findViewById(R.id.return_);
+        hist= findViewById(R.id.hist);
+
+        hist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Borrow_return.this, HistoryAll.class);
+                startActivity(intent);
+            }
+        });
 
         borrow.setOnClickListener(new View.OnClickListener() {
             @Override

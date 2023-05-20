@@ -4,11 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -27,47 +25,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RoomHistory extends AppCompatActivity {
+public class HistoryAll extends AppCompatActivity {
 
-    private Button back_hist, all_hist;
+    private Button back_all;
     private TableLayout tableLayout;
-    private TextView roomNo;
     private Transaction trans;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_room_history);
+        setContentView(R.layout.activity_history_all);
 
-        back_hist= findViewById(R.id.back_hist);
-        all_hist= findViewById(R.id.room_hist);
+        back_all= findViewById(R.id.back_all);
         tableLayout= findViewById(R.id.tableLayout);
-        roomNo= findViewById(R.id.roomNo);
         trans= new Transaction();
 
-        roomNo.setText("Room "+trans.getRoom());
-
-        all_hist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RoomHistory.this, HistoryAll.class);
-                startActivity(intent);
-            }
-        });
-        back_hist.setOnClickListener(new View.OnClickListener() {
+        back_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-
             }
         });
         addRow();
     }
-
     private void addRow() {
         TableRow newRow= new TableRow(this);
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("transactions");
-        Query query = databaseReference.orderByChild("roomNo").equalTo(trans.getRoom()).limitToLast(50);
+        Query query = databaseReference.orderByChild("borrowedTime").limitToLast(50);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -80,10 +64,11 @@ public class RoomHistory extends AppCompatActivity {
                 // Reverse the list to get descending order
                 Collections.reverse(dataSnapshotList);
                 for (DataSnapshot dataSnapshot:dataSnapshotList) {
-                    TableRow newRow= new TableRow(RoomHistory.this);
+                    TableRow newRow= new TableRow(HistoryAll.this);
 
                     String userId= dataSnapshot.child("user").getValue().toString();
                     String username= dataSnapshot.child("username").getValue().toString();
+                    String roomNo= dataSnapshot.child("roomNo").getValue().toString();
                     Boolean acRemote= (Boolean) dataSnapshot.child("acRemote").getValue();
                     Boolean tvRemote= (Boolean) dataSnapshot.child("tvRemote").getValue();
                     Boolean roomKey= (Boolean) dataSnapshot.child("roomKey").getValue();
@@ -96,15 +81,15 @@ public class RoomHistory extends AppCompatActivity {
                     String returnedTime= dataSnapshot.child("returnedTime").getValue().toString();
                     String status= dataSnapshot.child("status").getValue().toString();
 
-                    String[] array= new String[]{userId, username, borrowedTime, returnedTime, items, status};
+                    String[] array= new String[]{userId, username, roomNo, borrowedTime, returnedTime, items, status};
 
                     for (String item:array) {
-                        TextView data= new TextView(RoomHistory.this);
+                        TextView data= new TextView(HistoryAll.this);
                         data.setText(item);
                         data.setTextColor(Color.WHITE);
                         data.setGravity(Gravity.CENTER);
                         data.setTextSize(18);
-                        Typeface typeface = ResourcesCompat.getFont(RoomHistory.this, R.font.poppins_regular);
+                        Typeface typeface = ResourcesCompat.getFont(HistoryAll.this, R.font.poppins_regular);
                         newRow.addView(data);
                     }
                     tableLayout.addView(newRow);
